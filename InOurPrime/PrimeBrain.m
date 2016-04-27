@@ -10,7 +10,9 @@
 
 @implementation PrimeBrain
 
-
+//
+//  see if passed number is prime
+//
 -(BOOL) isPrime:(NSUInteger)value{
     
     BOOL prime = YES;
@@ -27,15 +29,26 @@
     
 }
 
-
+//
+//  find all prime numbers for a range
+//
 -(NSArray*)primeFactos:(NSUInteger)value{
     
-    return @[@1, @2, @3];
+    NSMutableArray* list = [[NSMutableArray alloc] init];
+    
+    for (int i=2; i < value; i++) {
+        if ([self isPrime:i])
+            [list addObject:[NSNumber numberWithInteger:i]];
+    }
+    
+    return list;
     
 }
 
 
-
+//
+//  find largest number from passed array
+//
 -(NSUInteger)largestCommonPrime:(NSArray*)firstList secondList:(NSArray*)secondList{
     
     return 20;

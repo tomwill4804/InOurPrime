@@ -51,6 +51,10 @@ enum calcType {
     switch (calcType) {
         case calcCheck: {
             
+            //
+            //  build array for all numbers entered and check each one to
+            //  see if it is a prime number
+            //
             NSString* msg = @"Prime: ";
             NSArray* numbers = [self.firstList.text componentsSeparatedByString:@" "];
             for (NSString* num in numbers){
@@ -61,9 +65,30 @@ enum calcType {
                 msg = [msg stringByAppendingString:strText];
             }
             self.functionAnswer.text = msg;
+            break;
+        }
+        case calcFactor: {
+            
+            //
+            //  get a list of all prime factors for the entered value
+            //
+            NSArray* list = [brain primeFactos:[self.firstList.text integerValue]];
+            
+            NSString* msg = @"Prime:";
+            
+            for (NSNumber* num in list){
+                NSString* strText = [NSString stringWithFormat:@" %@,", num];
+                msg = [msg stringByAppendingString:strText];
+            }
+            self.functionAnswer.text = [msg substringToIndex:[msg length] - 1];
+            break;
         }
             
+        case calcLargest: {
+            
             break;
+            
+        }
             
         default:
             break;
