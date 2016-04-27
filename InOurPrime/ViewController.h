@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UITableViewController<UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField* firstList;
+@property (weak, nonatomic) IBOutlet UITextField* secondList;
+@property (weak, nonatomic) IBOutlet UILabel* functionLabel;
+@property (weak, nonatomic) IBOutlet UILabel* functionAnswer;
+
+@property (weak, nonatomic) IBOutlet UIButton* calcButton;
+
+-(IBAction)doCalc:(id)sender;
 
 
 @end

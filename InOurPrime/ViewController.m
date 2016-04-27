@@ -7,21 +7,127 @@
 //
 
 #import "ViewController.h"
+#import "PrimeBrain.h"
 
-@interface ViewController ()
+enum calcType {
+    
+    calcCheck = 0,
+    calcFactor,
+    calcLargest
+    
+};
+
+@interface ViewController () {
+    
+    enum calcType calcType;
+    
+    PrimeBrain* brain;
+    
+}
+
 
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    brain = [[PrimeBrain alloc] init];
+    
+    calcType = calcCheck;
+    
+    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection: 1] animated:NO
+                          scrollPosition:UITableViewScrollPositionTop];
+    
+    [self.firstList addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self.secondList addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(IBAction)doCalc:(id)sender{
+    
+    switch (calcType) {
+        case calcCheck: {
+            
+            NSString* msg = @"Prime: ";
+            NSArray* numbers = [self.firstList.text componentsSeparatedByString:@" "];
+            for (NSString* num in numbers){
+                
+                BOOL isPrime = [brain isPrime:[num integerValue]];
+                NSString* strText = [NSString stringWithFormat:@"%@:%@ ", num, isPrime ? @"Yes" : @"No"];
+                
+                msg = [msg stringByAppendingString:strText];
+            }
+            self.functionAnswer.text = msg;
+        }
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+    
+    
+    
+    
 }
+
+
+
+//
+//  mark only one cell is second section and set the field attributes
+//
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath   *)indexPath
+{
+    if (indexPath.section == 1) {
+        
+        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+        UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        calcType = cell.tag;
+        [self setFieldAttr];
+        
+    }
+    
+}
+
+//
+//  remove check on cell
+//
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 1)
+        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+}
+
+
+- (void)textFieldDidChange:(UITextField *)textField {
+ 
+    [self setFieldAttr];
+    
+}
+
+
+//
+// enable fields based on data entered and function selected
+//
+-(void)setFieldAttr{
+    
+    if (calcType != calcLargest)
+        self.secondList.enabled = NO;
+    else
+        self.secondList.enabled = YES;
+    
+    self.calcButton.enabled = NO;
+    if ( (self.firstList.text.length > 0) &&
+        (self.secondList.text.length > 0 || !self.secondList.enabled) )
+        self.calcButton.enabled = YES;
+
+    
+}
+
 
 @end

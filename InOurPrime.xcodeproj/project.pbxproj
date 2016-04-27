@@ -13,6 +13,7 @@
 		E3EB67461CD12D4A00AE0C36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3EB67441CD12D4A00AE0C36 /* Main.storyboard */; };
 		E3EB67481CD12D4A00AE0C36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3EB67471CD12D4A00AE0C36 /* Assets.xcassets */; };
 		E3EB674B1CD12D4A00AE0C36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3EB67491CD12D4A00AE0C36 /* LaunchScreen.storyboard */; };
+		E3EB67541CD1353B00AE0C36 /* PrimeBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = E3EB67531CD1353B00AE0C36 /* PrimeBrain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		E3EB67471CD12D4A00AE0C36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3EB674A1CD12D4A00AE0C36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3EB674C1CD12D4A00AE0C36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3EB67521CD1353B00AE0C36 /* PrimeBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimeBrain.h; sourceTree = "<group>"; };
+		E3EB67531CD1353B00AE0C36 /* PrimeBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrimeBrain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +61,12 @@
 		E3EB673A1CD12D4A00AE0C36 /* InOurPrime */ = {
 			isa = PBXGroup;
 			children = (
-				E3EB673E1CD12D4A00AE0C36 /* AppDelegate.h */,
-				E3EB673F1CD12D4A00AE0C36 /* AppDelegate.m */,
+				E3EB67521CD1353B00AE0C36 /* PrimeBrain.h */,
+				E3EB67531CD1353B00AE0C36 /* PrimeBrain.m */,
 				E3EB67411CD12D4A00AE0C36 /* ViewController.h */,
 				E3EB67421CD12D4A00AE0C36 /* ViewController.m */,
+				E3EB673E1CD12D4A00AE0C36 /* AppDelegate.h */,
+				E3EB673F1CD12D4A00AE0C36 /* AppDelegate.m */,
 				E3EB67441CD12D4A00AE0C36 /* Main.storyboard */,
 				E3EB67471CD12D4A00AE0C36 /* Assets.xcassets */,
 				E3EB67491CD12D4A00AE0C36 /* LaunchScreen.storyboard */,
@@ -149,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3EB67541CD1353B00AE0C36 /* PrimeBrain.m in Sources */,
 				E3EB67431CD12D4A00AE0C36 /* ViewController.m in Sources */,
 				E3EB67401CD12D4A00AE0C36 /* AppDelegate.m in Sources */,
 				E3EB673D1CD12D4A00AE0C36 /* main.m in Sources */,
