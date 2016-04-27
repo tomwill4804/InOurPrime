@@ -16,38 +16,30 @@
                         <sections>
                             <tableViewSection headerTitle="Prime Numbers" id="O06-Ng-zYo">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="194" id="Ybe-Hf-US3">
-                                        <rect key="frame" x="0.0" y="49.5" width="600" height="194"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="146" id="Ybe-Hf-US3">
+                                        <rect key="frame" x="0.0" y="49.5" width="600" height="146"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ybe-Hf-US3" id="4sM-4d-SRm">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="193.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="145.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First prime number list" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WgL-nd-O1H">
                                                     <rect key="frame" x="8" y="8" width="584" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="Pl3-gg-2J0" id="EaZ-pX-39z"/>
                                                     </connections>
                                                 </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Second prime number list" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="St6-NI-gvu">
-                                                    <rect key="frame" x="8" y="46" width="584" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="Pl3-gg-2J0" id="Gok-j7-E86"/>
-                                                    </connections>
-                                                </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqW-gi-I7f">
-                                                    <rect key="frame" x="9" y="89.5" width="55" height="30"/>
+                                                    <rect key="frame" x="9" y="46" width="55" height="30"/>
                                                     <state key="normal" title="Check"/>
                                                     <connections>
                                                         <action selector="doCalc:" destination="Pl3-gg-2J0" eventType="touchUpInside" id="VYr-a0-fm5"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRp-54-xZL">
-                                                    <rect key="frame" x="9" y="127" width="584" height="38"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRp-54-xZL">
+                                                    <rect key="frame" x="9" y="84" width="584" height="54"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -60,7 +52,7 @@
                             <tableViewSection headerTitle="Function" id="0PV-Wa-Iff">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="zYM-FV-aXc" style="IBUITableViewCellStyleDefault" id="qg7-gx-B1G">
-                                        <rect key="frame" x="0.0" y="293.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="245.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qg7-gx-B1G" id="0i8-f8-Znp">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -77,7 +69,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="AuL-gc-nCp" style="IBUITableViewCellStyleDefault" id="jKn-y0-eEv">
-                                        <rect key="frame" x="0.0" y="337.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="289.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jKn-y0-eEv" id="B4h-CE-Hmm">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -94,7 +86,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" tag="2" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="STu-a2-naZ" style="IBUITableViewCellStyleDefault" id="p5G-lY-Lq1">
-                                        <rect key="frame" x="0.0" y="381.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="333.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p5G-lY-Lq1" id="0gZ-yC-u1i">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -122,7 +114,6 @@
                         <outlet property="calcButton" destination="aqW-gi-I7f" id="P0I-MT-DkJ"/>
                         <outlet property="firstList" destination="WgL-nd-O1H" id="ZAN-lj-Hwa"/>
                         <outlet property="functionAnswer" destination="mRp-54-xZL" id="yel-ZC-3Wq"/>
-                        <outlet property="secondList" destination="St6-NI-gvu" id="aud-WB-VhG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8h-Os-b1a" userLabel="First Responder" sceneMemberID="firstResponder"/>

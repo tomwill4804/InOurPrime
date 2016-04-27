@@ -32,7 +32,7 @@
 //
 //  find all prime numbers for a range
 //
--(NSArray*)primeFactos:(NSUInteger)value{
+-(NSArray*)primeFactors:(NSUInteger)value{
     
     NSMutableArray* list = [[NSMutableArray alloc] init];
     
@@ -49,9 +49,21 @@
 //
 //  find largest number from passed array
 //
--(NSUInteger)largestCommonPrime:(NSArray*)firstList secondList:(NSArray*)secondList{
+-(NSUInteger)largestCommonPrime:(NSUInteger)firstValue secondList:(NSUInteger)secondValue{
     
-    return 20;
+    NSArray* first = [self primeFactors:firstValue];
+    NSArray* second = [self primeFactors:secondValue];
+    
+    NSUInteger max = 0;
+    
+    for (NSNumber* fv in first) {
+        for (NSNumber* sv in second) {
+            if ([fv integerValue] == [sv integerValue] && [fv integerValue] > max)
+                max = [fv integerValue];
+        }
+    }
+    
+    return max;
     
 }
 

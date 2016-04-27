@@ -46,6 +46,20 @@ enum calcType {
     
 }
 
+-(NSArray*)listFromString:(NSString*)string{
+    
+    NSArray *list = [self.firstList.text componentsSeparatedByString:@" "];
+    NSMutableArray *flist = [[NSMutableArray alloc] init];
+    
+    for (NSString* s in list) {
+        if (s.length > 0)
+            [flist addObject:s];
+    }
+    return flist;
+    
+}
+
+
 -(IBAction)doCalc:(id)sender{
     
     switch (calcType) {
@@ -56,7 +70,7 @@ enum calcType {
             //  see if it is a prime number
             //
             NSString* msg = @"Prime: ";
-            NSArray* numbers = [self.firstList.text componentsSeparatedByString:@" "];
+            NSArray* numbers = [self listFromString:self.firstList.text];
             for (NSString* num in numbers){
                 
                 BOOL isPrime = [brain isPrime:[num integerValue]];
@@ -66,15 +80,19 @@ enum calcType {
             }
             self.functionAnswer.text = msg;
             break;
+            
         }
+            
+            
         case calcFactor: {
             
             //
             //  get a list of all prime factors for the entered value
             //
-            NSArray* list = [brain primeFactos:[self.firstList.text integerValue]];
+            NSUInteger value = [self.firstList.text integerValue];
+            NSArray* list = [brain primeFactors:value];
             
-            NSString* msg = @"Prime:";
+            NSString* msg = [NSString stringWithFormat:@"Prime factors for %lu:", (unsigned long)value];
             
             for (NSNumber* num in list){
                 NSString* strText = [NSString stringWithFormat:@" %@,", num];
@@ -84,8 +102,23 @@ enum calcType {
             break;
         }
             
+            
         case calcLargest: {
             
+            //
+            //  find largest common prime number
+            //
+            
+            NSArray* list = [self listFromString:self.firstList.text];
+            
+            NSUInteger val1 = [list[0] integerValue];
+            NSUInteger val2 = [list[1] integerValue];
+            NSUInteger max = [brain largestCommonPrime:val1 secondList:val2];
+            
+            NSString* strText = [NSString stringWithFormat:@"Largest common prime for %lu and %lu is %lu", val1, (unsigned long)val2, (unsigned long)max];
+            
+            self.functionAnswer.text = strText;
+        
             break;
             
         }
@@ -95,12 +128,7 @@ enum calcType {
     }
     
     
-    
-    
-    
-    
 }
-
 
 
 //
@@ -141,18 +169,19 @@ enum calcType {
 //
 -(void)setFieldAttr{
     
-    if (calcType != calcLargest)
-        self.secondList.enabled = NO;
-    else
-        self.secondList.enabled = YES;
+    self.calcButton.enabled = YES;
     
-    self.calcButton.enabled = NO;
-    if ( (self.firstList.text.length > 0) &&
-        (self.secondList.text.length > 0 || !self.secondList.enabled) )
-        self.calcButton.enabled = YES;
-
+    if (self.firstList.text.length == 0)
+        self.calcButton.enabled = NO;
+    
+    if (calcType == calcLargest) {
+        NSArray *list = [self listFromString:self.firstList.text];
+        if (list.count < 2)
+            self.calcButton.enabled = NO;
+    }
     
 }
+
 
 
 @end

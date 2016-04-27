@@ -11,8 +11,8 @@
 @interface PrimeBrain : NSObject
 
 -(BOOL) isPrime:(NSUInteger)value;
--(NSArray*)primeFactos:(NSUInteger)value;
--(NSUInteger)largestCommonPrime:(NSArray*)firstList secondList:(NSArray*)secondList;
+-(NSArray*)primeFactors:(NSUInteger)value;
+-(NSUInteger)largestCommonPrime:(NSUInteger)firstValue secondList:(NSUInteger)secondValue;
 
 
 @end
