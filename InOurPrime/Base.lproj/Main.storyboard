@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,10 +18,10 @@
                             <tableViewSection headerTitle="Prime Numbers" id="O06-Ng-zYo">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="146" id="Ybe-Hf-US3">
-                                        <rect key="frame" x="0.0" y="49.5" width="600" height="146"/>
+                                        <rect key="frame" x="0.0" y="50" width="600" height="146"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ybe-Hf-US3" id="4sM-4d-SRm">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="145.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="146"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="List of numbers" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WgL-nd-O1H">
@@ -31,20 +32,30 @@
                                                         <outlet property="delegate" destination="Pl3-gg-2J0" id="EaZ-pX-39z"/>
                                                     </connections>
                                                 </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqW-gi-I7f">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqW-gi-I7f">
                                                     <rect key="frame" x="9" y="46" width="55" height="30"/>
                                                     <state key="normal" title="Check"/>
                                                     <connections>
                                                         <action selector="doCalc:" destination="Pl3-gg-2J0" eventType="touchUpInside" id="VYr-a0-fm5"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRp-54-xZL">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRp-54-xZL">
                                                     <rect key="frame" x="9" y="84" width="584" height="54"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="54" id="U24-7i-Kho"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mRp-54-xZL" firstAttribute="leading" secondItem="4sM-4d-SRm" secondAttribute="leadingMargin" constant="1" id="3Md-Td-GBH"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="mRp-54-xZL" secondAttribute="bottom" constant="-0.5" id="EQt-zw-Ljc"/>
+                                                <constraint firstItem="mRp-54-xZL" firstAttribute="leading" secondItem="aqW-gi-I7f" secondAttribute="leading" id="NG9-EW-77J"/>
+                                                <constraint firstItem="mRp-54-xZL" firstAttribute="top" secondItem="aqW-gi-I7f" secondAttribute="bottom" constant="8" symbolic="YES" id="ZYz-Es-HnC"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="mRp-54-xZL" secondAttribute="trailing" constant="8" id="eBX-9Q-S8F"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
